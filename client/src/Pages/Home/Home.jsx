@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./home.styles.scss";
 import { generate } from "../../utility/lib";
-import { init } from "groq-sdk/_shims/index.mjs";
 
 const Home = () => {
   const [data, setData] = useState(
