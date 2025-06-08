@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const { callGroqAPI } = require("./utils/lib");
+const movieAi = require("./utils/movieAi");
 
 // setup middlewares
 app.use(cors());
@@ -14,6 +15,12 @@ app.get("/", (req, res) => {
 app.get("/api/generate", async (req, res) => {
   const response = await callGroqAPI();
   return res.json({ response });
+});
+
+app.get("/api/movie/:character", async (req, res) => {
+  const { character } = req.params;
+  const data = await movieAi({ character });
+  return res.json({ data });
 });
 
 app.get("/api/users", (req, res) => {
