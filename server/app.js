@@ -6,6 +6,11 @@ const { callGroqAPI } = require("./utils/lib");
 // setup middlewares
 app.use(cors());
 
+// routes
+app.get("/", (req, res) => {
+  return res.json({ message: "hello world" });
+});
+
 app.get("/api/generate", async (req, res) => {
   const response = await callGroqAPI();
   return res.json({ response });
