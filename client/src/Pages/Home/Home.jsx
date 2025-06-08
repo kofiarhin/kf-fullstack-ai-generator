@@ -20,6 +20,11 @@ const Home = () => {
       console.error("Failed to copy:", err);
     }
   };
+
+  const handleRefresh = async () => {
+    const res = await generate();
+    setData(res);
+  };
   return (
     <div id="home">
       {data && <h1>Today's Joke</h1>}
@@ -27,7 +32,14 @@ const Home = () => {
         <p>{data && data}</p>
       </div>
       <div className="button-wrapper">
-        {data && <button onClick={handleCopy}>Copy</button>}
+        {data && (
+          <>
+            <button onClick={handleRefresh} className="refresh">
+              More
+            </button>{" "}
+            <button onClick={handleCopy}>Copy</button>
+          </>
+        )}
       </div>
       {/* {data && <p> {data} </p>} */}
     </div>

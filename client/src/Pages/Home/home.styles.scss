@@ -12,6 +12,8 @@
   }
   .button-wrapper {
     text-align: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
   }
   h1 {
     margin-bottom: 1rem;
@@ -19,13 +21,19 @@
 
   p {
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
   }
 
   button {
-    padding: 0.5rem 2rem;
+    padding: 0.8rem 2rem;
     cursor: pointer;
-    width: 200px;
+    &.refresh {
+      display: inline-block;
+      margin-left: 1rem;
+      background-color: orange;
+      border: none;
+      color: white;
+    }
   }
 }
 
@@ -36,10 +44,6 @@
     }
     p {
       font-size: 0.8rem;
-    }
-
-    button {
-      padding: 0.4rem 1rem;
     }
   }
 }

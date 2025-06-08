@@ -7,8 +7,6 @@ const generate = async () => {
 
   const url = DEV_ENV === "development" ? devUrl : prodUrl;
 
-  console.log({ url, DEV_ENV });
-
   try {
     const res = await fetch(url);
 
@@ -17,7 +15,6 @@ const generate = async () => {
     }
 
     const data = await res.json();
-    console.log(data);
 
     return data.response;
   } catch (error) {
