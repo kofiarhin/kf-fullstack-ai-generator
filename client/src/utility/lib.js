@@ -2,7 +2,7 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
 const DEV_ENV = import.meta.env.VITE_DEV_ENV;
 
 const generate = async () => {
-  const prodUrl = `${BASE_URL}/api/generator`; // full path for production
+  const prodUrl = `${BASE_URL}/api/generate`; // full path for production
   const devUrl = "/api/generate"; // proxy path handled by Vite
 
   const url = DEV_ENV === "development" ? devUrl : prodUrl;
